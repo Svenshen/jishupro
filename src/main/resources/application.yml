@@ -1,0 +1,45 @@
+spring:
+    mvc:
+        # 视图相关
+        view: 
+            prefix: /templates/
+            suffix: .html
+    output:
+        ansi:
+         # 输出带颜色的日志信息
+        enabled: ALWAYS 
+    profiles:
+        # 设置激活的环境
+        active: dev 
+    jackson:
+        serialization:
+            indent-output: true
+        date-format: yyyy-MM-dd HH:mm:ss
+        time-zone: GMT+8
+    servlet:
+        multipart:
+            max-file-size: 100MB
+            max-request-size: 200MB
+# mybatis 配置
+mybatis: 
+    mapper-locations: classpath:mybatis/mapper/*.xml
+    type-aliases-package: tech.wetech.admin.modules.*.po
+    configuration:
+        map-underscore-to-camel-case: true
+# 通用 Mapper 配置
+mapper: 
+    identity: MYSQL
+    mappers: tech.wetech.admin.core.utils.MyMapper
+    not-empty: false
+    
+# 分页插件配置
+pagehelper: 
+    helperDialect: mysql
+    params: count=countSql
+    reasonable: true
+    supportMethodsArguments: true
+    
+#shiro
+password: 
+    algorithmName: md5
+    hashIterations: 2
