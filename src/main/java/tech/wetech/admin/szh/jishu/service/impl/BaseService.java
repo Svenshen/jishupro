@@ -34,6 +34,17 @@ public abstract class BaseService<T,ID> implements IService<T,ID>{
     protected JpaRepository<T,ID> dao;
     
     @Override
+    public boolean existsById(ID id){
+        return dao.existsById(id);
+    }
+    
+    @Override
+    public boolean existsByOne(T entity){
+        Example<T> e = Example.of(entity);
+        return dao.exists(e);
+    }
+    
+    @Override
     public List<T> queryAll() {
         return dao.findAll();
     }

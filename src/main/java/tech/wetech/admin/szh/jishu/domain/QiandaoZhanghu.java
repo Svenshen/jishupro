@@ -47,7 +47,7 @@ public class QiandaoZhanghu implements Serializable {
     String fujia ;
     
     @Column
-    Long userid;
+    String user;
     
 //    @Column
 //    Long leibieid;

@@ -44,5 +44,9 @@ public interface IService<T,ID> {
     void deleteAll(List<T> listentity) ;
 
     long count(T entity) ;
+    
+    boolean existsById(ID id);
 
+    boolean existsByOne(T entity);
+    
 }

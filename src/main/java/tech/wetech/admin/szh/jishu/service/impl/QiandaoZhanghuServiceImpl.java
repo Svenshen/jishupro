@@ -30,6 +30,7 @@ public class QiandaoZhanghuServiceImpl extends BaseService<QiandaoZhanghu,Long> 
     @Override
     public List<QiandaoZhanghu> queryOne(QiandaoLeibie qiandaoLeibie) {
         return qiandaoZhanghuDao.findByQiandaoLeibie(qiandaoLeibie);
+        
     }
 
 }
